@@ -1,0 +1,223 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    /* height: 100vh;
+    width: 100vw; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgb(5, 5, 20) 0%, rgb(14, 14, 63) 50%, rgb(5, 5, 20) 100%);
+}
+
+.container {
+    width: 80%;
+    max-width: 450px;
+}
+h1 {
+    color: white;
+    opacity: 0.75;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.display-container {
+    position: relative;
+    background-color: rgb(47, 52, 137);
+    border-bottom: o.35 solid rgb(37, 36, 99);
+    border-radius: 1rem;
+    margin: 1rem 0;
+    padding-top: 0.35rem;
+}
+
+.display {
+    background: transparent;
+    color: rgb(223, 177, 40);
+    padding: 1.5rem 1rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right: 3.25rem;
+    border: none;
+    text-transform: uppercase;
+}
+
+.display::placeholder {
+    position: absolute;
+    align-items: center;
+    left: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 30px;
+}
+.display-container button {
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translate(-100%, -40%);
+    border: none;
+    background: none;
+}
+.input-container {
+    width: 100%;
+    background-color: blue;
+    padding: 2rem;
+    border-radius: 0.7rem;
+}
+
+.length-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.length-container p:nth-child(1) {
+    color: white;
+    font-size: 1.5rem;
+}
+.length-container p:nth-child(2) {
+    color: rgb(223, 177, 40);
+    font-size: 1.5rem;
+}
+.strength-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.strength-container p {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.indicator {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
+
+.generatePassword {
+    width: 100%;
+    padding: 1rem 0;
+    background-color: blueviolet;
+    text-align: center;
+    border-radius: 0.75rem;
+    border-bottom: 0.35rem solid rgb(223, 177, 40);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgb(223, 177, 40);
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+.check {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    gap: 0 1rem;
+}
+.check input {
+    appearance: none; 
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid rgb(5, 5, 20);
+    position: relative;
+    cursor: pointer;
+    border-radius: 0.35rem;
+}
+
+.check input:checked {
+    background-color: aqua;
+}
+.check input:checked::before {
+    content: '✓';
+    position: absolute;
+    color: rgb(5, 5, 20);
+    font-size: 1.5rem;
+    font-weight: 800;
+    left: 10%;
+    top: -50%;
+}
+
+.slider {
+    appearance: none;
+    width: 100%;
+    height: 0.75rem;
+    cursor: pointer;
+    background-color:rgb(121, 121, 232);
+    border-radius: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    background-image: linear-gradient(rgb(5, 5, 20), rgb(14, 14, 63));
+    background-repeat: no-repeat;
+}
+.slider::-webkit-slider-thumb {
+    position: relative;
+    appearance: none;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: rgb(223, 177, 40);
+    cursor: pointer;
+    margin-top: -3px;
+    box-shadow: 0px 0px 20px rgb(223, 177, 40, 0.50);
+    transition: all 100ms ease-in;
+    z-index: 1;
+}
+.slider::-moz-range-thumb {
+    position: relative;
+    appearance: none;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: rgb(223, 177, 40);
+    cursor: pointer;
+    margin-top: -3px;
+    box-shadow: 0px 0px 20px rgb(223, 177, 40, 0.50);
+    transition: all 100ms ease-in;
+    z-index: 1;
+}
+
+.slider:focus {
+    outline: 3px solid rgb(223, 177, 40);
+}
+
+.slider::-webkit-slider-thumb:hover {
+    outline: 2px solid rgb(223, 177, 40);
+    background-color: rgb(14, 14, 63);
+    box-shadow: 0px 0px 25px 5px rgb(223, 177, 40, 0.80);
+    
+}
+
+.copyButton {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.copyMsg {
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    background-color: rgb(121, 121, 232);
+    font-size: 1.25rem;
+    top: -30px;
+    left: -20px;
+    color: rgb(223, 177, 40);
+    padding: 5px 10px;
+    border-radius: 1rem;
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+}
+.copyMsg.active {
+    opacity: 1;
+    transform: scale(1);
+}
